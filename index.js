@@ -151,8 +151,6 @@ feather.on('conf:loaded', function(){
         try{
             feather.util.del(project + 'conf/' + modulename);
             feather.util.del(project + 'data/' + modulename);
-            feather.util.del(preview + 'static/' + feather.config.get('statics') + '/' + modulename);
-            feather.util.del(project + 'static/' + feather.config.get('statics') + '/' + modulename);
             feather.util.del(project + 'view/_map_/' + modulename + '.json');
             feather.util.del(project + 'view/_plugins_');
             feather.util.del(project + 'view/' + modulename);
