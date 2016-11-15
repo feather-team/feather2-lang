@@ -1,6 +1,6 @@
 {
   "name": "feather2-lang",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "多模块",
   "main": "index.js",
   "dependencies": {

@@ -56,7 +56,7 @@ feather.on('conf:loaded', function(){
         useHash: false
     }, 1000000);
 
-    feather.match('plugins/(**)', {
+    feather.match('/plugins/(**)', {
         release: 'view/_plugins_/$1',
         useCompile: false,
         useHash: false,
