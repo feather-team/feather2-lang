@@ -118,7 +118,7 @@ feather.on('conf:loaded', function(){
                 info = feather.util.read(root);
 
                 try{
-                    info = feather.releaseInfo = JSON.parse(info);
+                    info = feather.releaseInfo = (new Function('return ' + info))();
                     break;
                 }catch(e){}
             }
@@ -137,6 +137,8 @@ feather.on('conf:loaded', function(){
         if(commonConfig.statics != config.statics){       
             feather.log.warn('common module\'s statics[' + commonConfig.statics + '] is different from current module\'s statics[' + config.statics + ']!');      
         }     
+
+        feather.config.set('require.config.rules', (commonConfig.require.config.rules || []).concat(config.require.config.rules || []));
 
         //判断如果找不到当前模块，说明已过期
         if(!info.modules[modulename]){
